@@ -1,0 +1,24 @@
+{
+  "reviews": [
+    {
+      "name": "Joe",
+      "review": "Good stuff",
+      "rating": 4
+    },
+    {
+      "name": "Jack",
+      "review": "Bad stuff",
+      "rating": 1
+    },
+    {
+      "name": "Jerry",
+      "review": "Ok stuff",
+      "rating": 3
+    },
+    {
+      "name": "Jim",
+      "review": "Great stuff",
+      "rating": 5
+    }
+  ]
+}
