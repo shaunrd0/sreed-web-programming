@@ -1,3 +1,54 @@
+<template>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Mastery</title>
+  </head>
+  <body>
+
+    <!-- div element with id="app" initialized by public/index.html-->
+    <div class="cart">
+      Cart({{ cart }})
+    </div>
+    <br> <br> <br> <br> <br>
+
+    <product-display
+        brand="Brand-A"
+        @add-to-cart="addToCart" @remove-from-cart="removeFromCart">
+    </product-display>
+  </body>
+  </html>
+</template>
+
+<script>
+import ProductDisplay from './components/ProductDisplay.vue'
+
+export default {
+  name: 'App',
+  components: {
+    ProductDisplay
+  },
+  data() {
+    return {
+      cart: [],
+    }
+  },
+  methods: {
+    addToCart(item) {
+      this.cart.push(item)
+    },
+    removeFromCart(item) {
+      let index = this.cart.indexOf(item)
+      if (index > -1) {
+        this.cart.splice(index, 1)
+      }
+    },
+  }
+}
+</script>
+
+<style>
 body {
   background-color: #f2f2f2;
   margin: 0px;
@@ -15,8 +66,8 @@ body {
   color: white;
   padding: 20px;
   box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
-    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
-    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+  inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+  inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
   text-align: center;
   cursor: pointer;
 }
@@ -180,3 +231,4 @@ ul {
     width: 90%;
   }
 }
+</style>
